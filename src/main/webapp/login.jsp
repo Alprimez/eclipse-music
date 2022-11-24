@@ -8,13 +8,16 @@
   </head>
 
   <body>
-    <div>
+    <form action="LoginServlet">
       <h1>Login</h1>
       Username:
       <input type="text" placeholder="username">
+      <br>
       Password:
       <input type="password" placeholder="password">
-    </div>
+      <br>
+      <input type="submit" value="Login">
+    </form>
   </body>
 
   </html>

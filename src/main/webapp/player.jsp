@@ -11,6 +11,13 @@
   <body>
     <h1>Player</h1>
     <audio controls type="audio/mpeg" src="https://mp3.chillhop.com/serve.php/?mp3=9272"></audio>
+
+    <h1>Comments</h1>
+    <form>
+      <textarea placeholder="Your comments"></textarea>
+      <br>
+      <input type="submit" value="Comment">
+    </form>
   </body>
 
   </html>
