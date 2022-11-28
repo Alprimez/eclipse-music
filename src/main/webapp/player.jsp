@@ -13,11 +13,15 @@
     <audio controls type="audio/mpeg" src="https://mp3.chillhop.com/serve.php/?mp3=9272"></audio>
 
     <h1>Comments</h1>
-    <form>
-      <textarea placeholder="Your comments"></textarea>
+    <form action="CommentServlet" method="post">
+      <textarea placeholder="Your comments" name="yourComment"></textarea>
       <br>
       <input type="submit" value="Comment">
     </form>
   </body>
-
+<% String yourComment = (String) request.getAttribute("comment");
+if (yourComment != null) {
+	out.print(String.format(yourComment));
+}
+%>
   </html>
