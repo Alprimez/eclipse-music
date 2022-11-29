@@ -76,7 +76,11 @@
         <div class="right">
           <div class="content">
             <h2>Login</h2>
-            <form id="form-login" method="post" form action="LoginServlet">
+            <% 
+            String result = (String)request.getAttribute("inputResult");
+            %>
+            <div><%=result %></div>
+            <form id="form-login" method="post" action="login">
               <div class="form-element form-stack">
                 <label for="username-login" class="form-label">Username</label>
                 <input id="username-login" type="text" name="username">
@@ -86,7 +90,7 @@
                 <input id="password-login" type="password" name="password">
               </div>
               <div class="form-element form-submit">
-                <button id="logIn" class="login" type="submit" type="submit" name="login">Log In</button>
+                <button id="logIn" class="login" type="submit" name="login">Log In</button>
                 <button id="goRight" class="login off" name="signup">Sign Up</button>
               </div>
             </form>
