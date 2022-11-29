@@ -1,6 +1,6 @@
-package com.dvops.maven.eclipse;
+package com.eclipsemusic;
 
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,12 +36,11 @@ public class CommentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String yourComment = request.getParameter("yourComment");
-		PrintWriter writer = response.getWriter();
-		writer.println("<div>" + yourComment + "</div>");
-		//Temp is <div> tag, meant to be a box around the comment
-		writer.close();
+		
 		request.setAttribute("comment", yourComment);
-		this.getServletContext().getRequestDispatcher("/webapp/player.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/player.jsp").forward(request, response);
+		
+		//can only do 1 comment only
 	}
 
 }

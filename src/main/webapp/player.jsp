@@ -19,6 +19,9 @@
       <input type="submit" value="Comment">
     </form>
   </body>
+
+  <br>
+  <!--The comment needs a box-->
 <% String yourComment = (String) request.getAttribute("comment");
 if (yourComment != null) {
 	out.print(String.format(yourComment));
