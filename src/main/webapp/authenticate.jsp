@@ -7,7 +7,7 @@
     <title>Eclipse Music</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600' rel='stylesheet' type='text/css'>
-    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/authentication.css">
 
   </head>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="player.jsp">Player</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="feed.jsp">Music Feed</a>
@@ -35,9 +35,6 @@
         </div>
       </div>
     </nav>
-  </body>
-
-  <body>
     <!-- partial:index.partial.html -->
     <div id="back">
       <canvas id="canvas" class="canvas-back"></canvas>
@@ -46,7 +43,6 @@
       <div class="backLeft">
       </div>
     </div>
-
     <div id="slideBox">
       <div class="topLayer">
         <div class="left">
