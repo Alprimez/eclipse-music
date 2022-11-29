@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="login.jsp">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="feed.jsp">Music Feed</a>
+              <a class="nav-link" aria-current="page" href="feed.jsp">Music Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.jsp">Login</a>
+              <a class="nav-link" href="authenticate.jsp">Login</a>
             </li>
           </ul>
         </div>
