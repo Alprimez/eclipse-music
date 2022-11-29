@@ -78,16 +78,14 @@
       </div>
     </nav>
   
-    <h2>Responsive Image Gallery</h2>
-  
-    <h4>Resize the browser window to see the effect.</h4>
+    <h2>Eclipse Music Library</h2>
   
     <div class="responsive">
       <div class="gallery">
         <a target="_blank" href="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg">
-          <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg" alt="Cinque Terre" width="600" height="400">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg" alt="Big Fish Theory" width="600" height="400">
         </a>
-        <div class="desc">Add a description of the image here</div>
+        <div class="desc">Big Fish Theory, Vince Staples</div>
       </div>
     </div>
   
@@ -118,16 +116,7 @@
         <div class="desc">Add a description of the image here</div>
       </div>
     </div>
-  
-    <div class="clearfix"></div>
-  
-    <div style="padding:6px;">
-      <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px
-        wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side.
-        For screens smaller than 500px, the images will stack vertically (100%).</p>
-      <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-    </div>
-  
+
   </body>
   
   </html>
