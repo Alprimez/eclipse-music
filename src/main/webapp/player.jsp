@@ -11,6 +11,20 @@
   <body>
     <h1>Player</h1>
     <audio controls type="audio/mpeg" src="https://mp3.chillhop.com/serve.php/?mp3=9272"></audio>
+
+    <h1>Comments</h1>
+    <form action="CommentServlet" method="post">
+      <textarea placeholder="Your comments" name="yourComment"></textarea>
+      <br>
+      <input type="submit" value="Comment">
+    </form>
   </body>
 
+  <br>
+  <!--The comment needs a box-->
+<% String yourComment = (String) request.getAttribute("comment");
+if (yourComment != null) {
+	out.print(String.format(yourComment));
+}
+%>
   </html>

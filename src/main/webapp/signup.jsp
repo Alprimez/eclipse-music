@@ -8,15 +8,19 @@
   </head>
 
   <body>
-    <div>
+    <form action="RegisterServlet">
       <h1>Sign Up</h1>
       Username:
       <input type="text" placeholder="username">
+      <br>
       Password:
       <input type="password" placeholder="password">
+      <br>
       Confirm Password:
       <input type="password" placeholder="confirm password">
-    </div>
+      <br>
+      <input type="submit" value="Register">
+    </form>
   </body>
 
   </html>
