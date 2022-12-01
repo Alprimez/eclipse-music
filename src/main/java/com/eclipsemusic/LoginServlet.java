@@ -3,7 +3,6 @@ package com.eclipsemusic;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.MessageFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
-    request.getRequestDispatcher("/login.jsp").forward(request, response);
+    request.getRequestDispatcher("/authenticate.jsp").forward(request, response);
 	}
 
 	/**
@@ -44,7 +43,7 @@ public class LoginServlet extends HttpServlet {
     String userInput = request.getParameter("username");
     String userPass = request.getParameter("password");
     request.setAttribute("inputResult", "Success! <br/>Username is:" + userInput + "<br/>Password is: " + userPass);
-    request.getRequestDispatcher("/login.jsp").forward(request, response);
+    request.getRequestDispatcher("/authenticate.jsp").forward(request, response);
 	}
 
   // Unused method. Save it for later ig.

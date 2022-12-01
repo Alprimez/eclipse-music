@@ -78,6 +78,9 @@
             <h2>Login</h2>
             <% 
             String result = (String)request.getAttribute("inputResult");
+            if (result == null) {
+              result = "";
+            }
             %>
             <div><%=result %></div>
             <form id="form-login" method="post" action="login">
