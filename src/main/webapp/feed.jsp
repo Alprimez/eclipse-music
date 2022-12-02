@@ -166,14 +166,16 @@ body {
       <a href="index.html">Home</a>
       <a href="feed.jsp">Music</a>
       <!-- <a href="authenticate.jsp">Login</a> -->
-      <a href="authenticate.jsp" style="float:right">Login</a>
+      <a href="login.jsp" style="float:right">Login</a>
+    <a href="signup.jsp" style="float:right">Sign Up</a>
+
     </div>
 
     <h2>Eclipse Music Library</h2>
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg">
+        <a target="_blank" href="player.jsp">
           <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg"
             alt="Big Fish Theory" width="600" height="400">
         </a>
@@ -184,7 +186,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="img_forest.jpg">
+        <a target="_blank" href="player.jsp">
           <img src="img_forest.jpg" alt="Forest" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
@@ -193,7 +195,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="img_lights.jpg">
+        <a target="_blank" href="player.jsp">
           <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
@@ -202,7 +204,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="img_mountains.jpg">
+        <a target="_blank" href="player.jsp">
           <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
