@@ -24,4 +24,13 @@ public class UserCollection {
   public User getUser(int num) {
     return allUsers.get(num);
   }
+
+  public void addUser(String username, String email, String password) {
+    User user = new User(username, email, password);
+    allUsers.add(user);
+  }
+
+  public List<User> getAllUsers() {
+    return allUsers;
+  }
 }

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/player")
 public class CommentServlet extends HttpServlet {
+  UserCollection userCol = new UserCollection();
+
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -27,9 +29,9 @@ public class CommentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("comment", userCol.getAllUsers());
     request.getRequestDispatcher("/player.jsp").forward(request, response);
+    // response.sendRedirect("/player?");
 	}
 
 	/**
@@ -37,9 +39,9 @@ public class CommentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userComment = request.getParameter("userComment");
-    UserCollection userCol = new UserCollection();
+    userCol.addUser(userComment, "ok", "ok");
 		
-		request.setAttribute("comment", userCol.getUser(0).username + "<br/>" + userComment);
-    request.getRequestDispatcher("/player.jsp").forward(request, response);
+		request.setAttribute("comment", userCol.getAllUsers());
+		request.getRequestDispatcher("/player.jsp").forward(request, response);
 	}
 }

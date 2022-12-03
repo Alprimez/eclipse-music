@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page import = "java.util.Iterator"%>
+<%@ page import = "java.util.ArrayList"%>
+<%@ page import = "com.eclipsemusic.User"%>
+<%@ page import = "com.eclipsemusic.UserCollection"%>
+<%@ page import = "java.util.List"%>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -188,11 +193,18 @@ body {
   <br>
   <!--The comment needs a box-->
   <%
-  String result = "";
-  result += (String)request.getAttribute("comment") + " ";
-  if (result == null) {
-    result = "";
-  }
+  List<User> allUsers = (ArrayList)request.getAttribute("comment");
+  // UserCollection userCol = UserCollection();
+  // List<User> allUsers = userCol.getAllUsers();
+  if (allUsers == null) {%>
+    <div></div>
+  <%
+  } else { 
+  	Iterator<User> iterator = allUsers.iterator();
+	  while(iterator.hasNext()) {
+	    User user = iterator.next();
   %>
-  <div><%=result %></div>
+  <div><%=user.getUsername()%></div>
+  <%}
+  }%>
 </html>

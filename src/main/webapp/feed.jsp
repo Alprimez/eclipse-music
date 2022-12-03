@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-  <!DOCTYPE html>
-  <html>
-
+<!DOCTYPE html>
+<html>
   <head>
     <style>
       div.gallery {
@@ -175,7 +174,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="player.jsp">
+        <a target="_blank" href="player">
           <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg"
             alt="Big Fish Theory" width="600" height="400">
         </a>
@@ -186,7 +185,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="player.jsp">
+        <a target="_blank" href="player">
           <img src="img_forest.jpg" alt="Forest" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
@@ -195,7 +194,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="player.jsp">
+        <a target="_blank" href="player">
           <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
@@ -204,7 +203,7 @@ body {
 
     <div class="responsive">
       <div class="gallery">
-        <a target="_blank" href="player.jsp">
+        <a target="_blank" href="player">
           <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
         </a>
         <div class="desc">Add a description of the image here</div>
@@ -212,5 +211,4 @@ body {
     </div>
 
   </body>
-
-  </html>
+</html>
