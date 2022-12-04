@@ -29,7 +29,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <form class="col-sm" form id="form-login" method="post" action="login">
+                    <form class="col-sm" form id="form-login" method="post" action="signup">
                         <h1 class="display-3" style="font-family: Futura-CondensedExtraBold, sans-serif;">Sign Up 
                         </h1>
                         <br>
