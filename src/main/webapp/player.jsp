@@ -3,6 +3,8 @@
 <%@ page import = "java.util.ArrayList"%>
 <%@ page import = "com.eclipsemusic.User"%>
 <%@ page import = "com.eclipsemusic.UserCollection"%>
+<%@ page import = "com.eclipsemusic.Comment"%>
+<%@ page import = "com.eclipsemusic.CommentCollection"%>
 <%@ page import = "java.util.List"%>
   <!DOCTYPE html>
   <html lang="en">
@@ -142,6 +144,14 @@ body {
   margin-top: 20px;
 }
 
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-bottom: 2rem;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {   
@@ -193,18 +203,17 @@ body {
   <br>
   <!--The comment needs a box-->
   <%
-  List<User> allUsers = (ArrayList)request.getAttribute("comment");
-  // UserCollection userCol = UserCollection();
-  // List<User> allUsers = userCol.getAllUsers();
-  if (allUsers == null) {%>
+  List<Comment> allComments = (ArrayList)request.getAttribute("comment");
+  if (allComments == null) {%>
     <div></div>
   <%
   } else { 
-  	Iterator<User> iterator = allUsers.iterator();
+  	Iterator<Comment> iterator = allComments.iterator();
 	  while(iterator.hasNext()) {
-	    User user = iterator.next();
+	    Comment comment = iterator.next();
   %>
-  <div><%=user.getUsername()%></div>
+  <div class="comment-username"><%=comment.getUser()%></div>
+  <div class="comment-text"><%=comment.getComment()%></div>
   <%}
   }%>
 </html>

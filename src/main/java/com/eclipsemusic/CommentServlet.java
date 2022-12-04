@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/player")
 public class CommentServlet extends HttpServlet {
   UserCollection userCol = new UserCollection();
+  CommentCollection comCol = new CommentCollection();
 
 	private static final long serialVersionUID = 1L;
        
@@ -29,9 +30,8 @@ public class CommentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("comment", userCol.getAllUsers());
+		request.setAttribute("comment", comCol.getComments(1));
     request.getRequestDispatcher("/player.jsp").forward(request, response);
-    // response.sendRedirect("/player?");
 	}
 
 	/**
@@ -40,8 +40,9 @@ public class CommentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userComment = request.getParameter("userComment");
     userCol.addUser(userComment, "ok", "ok");
+    comCol.addComment(userComment, "Jon", 1);
 		
-		request.setAttribute("comment", userCol.getAllUsers());
+		request.setAttribute("comment", comCol.getComments(1));
 		request.getRequestDispatcher("/player.jsp").forward(request, response);
 	}
 }
