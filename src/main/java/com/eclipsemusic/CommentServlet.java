@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CommentServlet
  */
-@WebServlet("/CommentServlet")
+@WebServlet("/player")
 public class CommentServlet extends HttpServlet {
+  UserCollection userCol = new UserCollection();
+  CommentCollection comCol = new CommentCollection();
+
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -27,20 +30,19 @@ public class CommentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("comment", comCol.getComments(1));
+    request.getRequestDispatcher("/player.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String yourComment = request.getParameter("yourComment");
+		String userComment = request.getParameter("userComment");
+    userCol.addUser(userComment, "ok", "ok");
+    comCol.addComment(userComment, "Jon", 1);
 		
-		request.setAttribute("comment", yourComment);
-		this.getServletContext().getRequestDispatcher("/player.jsp").forward(request, response);
-		
-		//can only do 1 comment only
+		request.setAttribute("comment", comCol.getComments(1));
+		request.getRequestDispatcher("/player.jsp").forward(request, response);
 	}
-
 }

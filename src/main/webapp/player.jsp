@@ -1,4 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page import = "java.util.Iterator"%>
+<%@ page import = "java.util.ArrayList"%>
+<%@ page import = "com.eclipsemusic.User"%>
+<%@ page import = "com.eclipsemusic.UserCollection"%>
+<%@ page import = "com.eclipsemusic.Comment"%>
+<%@ page import = "com.eclipsemusic.CommentCollection"%>
+<%@ page import = "java.util.List"%>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -137,6 +144,14 @@ body {
   margin-top: 20px;
 }
 
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-bottom: 2rem;
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {   
@@ -172,14 +187,14 @@ body {
       <!-- <a href="authenticate.jsp">Login</a> -->
       <a href="login.jsp" style="float:right">Login</a>
       <a href="signup.jsp" style="float:right">Sign Up</a>
-
-  </div>
+    </div>
+    
     <h1>Player</h1>
     <audio controls type="audio/mpeg" src="https://mp3.chillhop.com/serve.php/?mp3=9272"></audio>
 
     <h1>Comments</h1>
-    <form action="CommentServlet" method="post">
-      <textarea placeholder="Your comments" name="yourComment"></textarea>
+    <form action="player" method="post">
+      <textarea placeholder="Your comments" name="userComment"></textarea>
       <br>
       <input type="submit" value="Comment">
     </form>
@@ -187,10 +202,18 @@ body {
 
   <br>
   <!--The comment needs a box-->
-<% String yourComment = (String) request.getAttribute("comment");
-if (yourComment != null) {
-	out.print(String.format(yourComment));
-}
-%>
-  </html>
-  </html>
+  <%
+  List<Comment> allComments = (ArrayList)request.getAttribute("comment");
+  if (allComments == null) {%>
+    <div></div>
+  <%
+  } else { 
+  	Iterator<Comment> iterator = allComments.iterator();
+	  while(iterator.hasNext()) {
+	    Comment comment = iterator.next();
+  %>
+  <div class="comment-username"><%=comment.getUser()%></div>
+  <div class="comment-text"><%=comment.getComment()%></div>
+  <%}
+  }%>
+</html>
