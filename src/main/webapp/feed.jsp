@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
   <!DOCTYPE html>
-  <html lang="en">
+  <html>
 
   <head>
     <style>
@@ -153,14 +153,10 @@ body {
   }
 }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eclipse</title>
   </head>
 
   <body>
+
     <div class="header">
       <h1>Eclipse Music</h1>
       <p>Become a music critic today!</p>
@@ -171,26 +167,50 @@ body {
       <a href="feed.jsp">Music</a>
       <!-- <a href="authenticate.jsp">Login</a> -->
       <a href="login.jsp" style="float:right">Login</a>
-      <a href="signup.jsp" style="float:right">Sign Up</a>
+    <a href="signup.jsp" style="float:right">Sign Up</a>
 
-  </div>
-    <h1>Player</h1>
-    <audio controls type="audio/mpeg" src="https://mp3.chillhop.com/serve.php/?mp3=9272"></audio>
+    </div>
 
-    <h1>Comments</h1>
-    <form action="CommentServlet" method="post">
-      <textarea placeholder="Your comments" name="yourComment"></textarea>
-      <br>
-      <input type="submit" value="Comment">
-    </form>
+    <h2>Eclipse Music Library</h2>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="player.jsp">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/c0/Vince-Staples-Big-Fish-Theory.jpeg"
+            alt="Big Fish Theory" width="600" height="400">
+        </a>
+        <div class="desc">Big Fish Theory, Vince Staples</div>
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="player.jsp">
+          <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="player.jsp">
+          <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="player.jsp">
+          <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
   </body>
 
-  <br>
-  <!--The comment needs a box-->
-<% String yourComment = (String) request.getAttribute("comment");
-if (yourComment != null) {
-	out.print(String.format(yourComment));
-}
-%>
-  </html>
   </html>
