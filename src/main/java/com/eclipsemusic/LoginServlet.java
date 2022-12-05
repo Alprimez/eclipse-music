@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+  UserCollection userCol = CommonVariable.userCollection();
+
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -38,25 +40,36 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// doGet(request, response);
     String userInput = request.getParameter("username");
     String userPass = request.getParameter("password");
-    if (userInput != ""){
-      if (userPass != ""){
-        request.setAttribute("inputResult","Success!");
-        request.getRequestDispatcher("/index.html").forward(request, response);
-      }
-      else {
+    if (userInput != "") {
+      if (userPass != "") {
+        User userFound = userCol.getUser(userInput);
+        if (userFound != null) {
+          // This portion is for checking
+          // request.setAttribute("inputResult", java.text.MessageFormat.format("Username: {0} <br/> Password: {1} <br/><br/> UsernameInput: {2} <br/> PasswordInput: {3}", userFound.username, userFound.password, userInput, userPass));
+          // request.getRequestDispatcher("/login.jsp").forward(request, response);
+
+          // Actual code implementation
+          if (userFound.password.equals(userPass)) {
+            request.setAttribute("inputResult","Success!");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+          } else {
+            request.setAttribute("inputResult", "Incorrect password!");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+          }
+        } else {
+          request.setAttribute("inputResult", "User not found!");
+          request.getRequestDispatcher("/login.jsp").forward(request, response);
+        }
+      } else {
         request.setAttribute("inputResult", "Please input a password!");
         request.getRequestDispatcher("/login.jsp").forward(request, response);
       }
-    }
-    else {
+    } else {
       request.setAttribute("inputResult", "Please input a username!");
       request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
-    
 	}
 
   // Unused method. Save it for later ig.

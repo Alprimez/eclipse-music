@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet {
+  UserCollection userCol = CommonVariable.userCollection();
+
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -38,8 +40,9 @@ public class SignupServlet extends HttpServlet {
 		String userNameInput = request.getParameter("username");
     String userPassInput = request.getParameter("password");
     if (userEmailInput != "") {
-      if (userNameInput != ""){
-        if (userPassInput != ""){
+      if (userNameInput != "") {
+        if (userPassInput != "") {
+          userCol.addUser(userNameInput, userEmailInput, userPassInput);
           request.setAttribute("inputResult","Success! <br/> Email is: " + userEmailInput + "<br/>Username is: " + userNameInput);
           request.getRequestDispatcher("/signup.jsp").forward(request, response);
         } else {

@@ -21,8 +21,15 @@ public class UserCollection {
     allUsers.add(user2);
   }
 
-  public User getUser(int num) {
-    return allUsers.get(num);
+  public User getUser(String username) {
+    User userFound = null;
+    for (User user : allUsers) {
+      if (user.username.equals(username)) {
+        userFound = user;
+      };
+    }
+    return userFound;
+    // return allUsers.get(num);
   }
 
   public void addUser(String username, String email, String password) {
