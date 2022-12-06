@@ -1,23 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+
   <body>
+
     <div class="header">
       <h1>Eclipse Music</h1>
       <p>Become a music critic today!</p>
     </div>
 
-    <head>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
     <div class="topnav">
       <a href="index.html">Home</a>
       <a href="feed.jsp">Music</a>
       <!-- <a href="authenticate.jsp">Login</a> -->
       <a href="login" style="float:right">Login</a>
       <a href="signup" style="float:right">Sign Up</a>
-
     </div>
 
     <% String result=(String)request.getAttribute("inputResult"); if (result==null) { result="" ; } %>
@@ -49,10 +52,12 @@
             <br>
             <button type="submit" class="btn btn-dark">Sign Up</button>
           </form>
-          <div class="col-sm"><img src="https://i1.sndcdn.com/avatars-5x5MLxzXngHYJA4l-e23i2A-t500x500.jpg"
+          <div class="col-sm"><img
+              src="https://images.unsplash.com/photo-1526478806334-5fd488fcaabc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=916&q=80"
               class="img-fluid" alt="...">
           </div>
         </div>
       </div>
   </body>
-</html>
+
+  </html>
